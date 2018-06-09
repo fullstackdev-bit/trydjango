@@ -24,7 +24,8 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('newsletter.urls')),
-    path('contact-us/', include('newsletter.urls')),
+    path('contact/', include('newsletter.urls')),
+    path('about/', include('newsletter.urls')),
     url(r'^accounts/', include('registration.backends.default.urls')),
 
 ]

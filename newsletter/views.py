@@ -32,7 +32,7 @@ def home(request):
             "title": "Thank you"
         }
 
-    return render(request, 'base.html', context)
+    return render(request, 'home.html', context)
 
 
 def contact(request):
@@ -69,3 +69,8 @@ def contact(request):
         "form": form,
     }
     return render(request, 'forms.html', context)
+
+
+def about(request):
+
+    return render(request, 'about.html', {})
