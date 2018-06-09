@@ -27,17 +27,28 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "protel2017@gmail.com"
+EMAIL_HOST_PASSWORD = "soskfk218Q@"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 
 INSTALLED_APPS = [
+    'registration', #should be immediately above 'django.contrib.admin'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'newsletter.apps.NewsletterConfig',
+    'crispy_forms',
 ]
+
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -119,3 +130,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static_root'),
+]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
